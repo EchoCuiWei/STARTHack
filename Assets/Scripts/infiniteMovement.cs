@@ -4,7 +4,11 @@ using System.Collections;
 public class InfiniteMovement : MonoBehaviour {
 
 	public float initSpeed = 0;
-	public int size = 19;
+	public int size = 5;
+	public float baseSpeed = 0;
+
+	private PlayerController pc;
+	public GameObject player;
 
 	private float pos = 0f;
 	private float speed;
@@ -12,11 +16,12 @@ public class InfiniteMovement : MonoBehaviour {
 	void Awake () {
 		speed = initSpeed;
 		DontDestroyOnLoad(transform.gameObject);
+		pc = player.GetComponent<PlayerController>();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		float movement = -speed*Time.deltaTime;
+		float movement = -speed*Time.deltaTime*pc.speed + Time.deltaTime*baseSpeed;
 		pos += movement;
 		if (transform.position.x < -size) {
 			pos += 2*size;

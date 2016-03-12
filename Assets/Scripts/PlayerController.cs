@@ -5,12 +5,17 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed = 0;
 	bool left = true;
+	private float elapsedAttack = 0;
+	public float attackTime = 1;
+	private bool attacking = false;
+	public GameObject effect;
 
 	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
 		animator = this.GetComponent<Animator>();
+		effect.GetComponent<SpriteRenderer>().enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -31,6 +36,18 @@ public class PlayerController : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			animator.SetBool("hitting",true);
+			effect.GetComponent<SpriteRenderer>().enabled = true;
+			attacking = true;
+		}
+
+		if (attacking) {
+			elapsedAttack += Time.deltaTime;
+			if (elapsedAttack > attackTime) {
+				elapsedAttack = 0;
+				attacking = false;
+				animator.SetBool("hitting",false);
+				effect.GetComponent<SpriteRenderer>().enabled = false;
+			}
 		}
 	}
 }
