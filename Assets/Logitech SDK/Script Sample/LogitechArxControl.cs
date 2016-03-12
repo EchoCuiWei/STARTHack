@@ -91,7 +91,7 @@ public class LogitechArxControl : MonoBehaviour {
 		else if (eventType == LogitechGSDK.LOGI_ARX_EVENT_TAP_ON_TAG)
 		{
 			Debug.Log("Tap on tag with id :"+eventArg);
-			GameObject.Find("player").GetComponent<PlayerController>().attacking();
+			GameObject.Find("player").GetComponent<PlayerController>().attackingF();
 		}			
 	}
 	
