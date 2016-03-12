@@ -13,7 +13,7 @@ public class MenuHandler : MonoBehaviour {
 	
 	}
 
-	void HandleExitButton() {
-        
+	public void handleExitButton() {
+        Application.Quit();
     }
 }
