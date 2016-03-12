@@ -152,8 +152,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.7513482}
   m_AnchorMax: {x: 0.5, y: 0.7513482}
-  m_AnchoredPosition: {x: 7, y: -217}
-  m_SizeDelta: {x: 307, y: 80}
+  m_AnchoredPosition: {x: 12, y: 19}
+  m_SizeDelta: {x: 475, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &83887308
 MonoBehaviour:
@@ -482,7 +482,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: EXIT
+  m_Text: 'KEYBOARD: RGB'
 --- !u!222 &215020093
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -522,8 +522,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.7513482}
   m_AnchorMax: {x: 0.5, y: 0.7513482}
-  m_AnchoredPosition: {x: 7, y: -217}
-  m_SizeDelta: {x: 307, y: 80}
+  m_AnchoredPosition: {x: 17, y: -217}
+  m_SizeDelta: {x: 475, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &297209798
 MonoBehaviour:
@@ -643,8 +643,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.7513482}
   m_AnchorMax: {x: 0.5, y: 0.7513482}
-  m_AnchoredPosition: {x: 4, y: 135.04828}
-  m_SizeDelta: {x: 307, y: 80}
+  m_AnchoredPosition: {x: 12, y: 135.04828}
+  m_SizeDelta: {x: 475, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359987978
 MonoBehaviour:
@@ -684,7 +684,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 359987979}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1516557790}
+        m_MethodName: handleStartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &359987979
@@ -1089,6 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b888776a5f2d4d72bc76ae3eb882239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRGBKeyboard: 0
 --- !u!1 &1618723070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,8 +1134,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.7513482}
   m_AnchorMax: {x: 0.5, y: 0.7513482}
-  m_AnchoredPosition: {x: 7, y: -96}
-  m_SizeDelta: {x: 307, y: 80}
+  m_AnchoredPosition: {x: 14.5, y: -95.99999}
+  m_SizeDelta: {x: 480, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1618723072
 MonoBehaviour:
