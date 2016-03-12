@@ -162,7 +162,7 @@ public class LogitechGSDK  {
         NUM_FIVE = 0x4C,
         NUM_SIX = 0x4D,
         LEFT_SHIFT = 0x2A,
-        Z = 0x2C,
+        Z = 0x2C,   
         X = 0x2D,
         C = 0x2E,
         V = 0x2F,

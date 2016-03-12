@@ -169,6 +169,7 @@ GameObject:
   - 4: {fileID: 305742211}
   - 212: {fileID: 305742210}
   - 114: {fileID: 305742212}
+  - 114: {fileID: 305742213}
   m_Layer: 0
   m_Name: clouds (1)
   m_TagString: Untagged
@@ -219,6 +220,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!114 &305742212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 305742209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05459b79ec915dd42887d4b30c052973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initSpeed: 0.45
+  size: 5
+  baseSpeed: 0.2
+  player: {fileID: 1773980119}
+--- !u!114 &305742213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -408,6 +424,8 @@ GameObject:
   - 92: {fileID: 922028227}
   - 124: {fileID: 922028226}
   - 81: {fileID: 922028225}
+  - 114: {fileID: 922028230}
+  - 114: {fileID: 922028231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -482,6 +500,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!114 &922028230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 922028224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f295bc31008c3ef4a877cc25de61c113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectLabel: 
+--- !u!114 &922028231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 922028224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379c11339c27c7e408987337f43c30cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1575256277
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +981,7 @@ GameObject:
   - 4: {fileID: 1955401922}
   - 212: {fileID: 1955401921}
   - 114: {fileID: 1955401923}
+  - 114: {fileID: 1955401924}
   m_Layer: 0
   m_Name: clouds
   m_TagString: Untagged
@@ -990,6 +1032,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
 --- !u!114 &1955401923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1955401920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05459b79ec915dd42887d4b30c052973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initSpeed: 0.45
+  size: 5
+  baseSpeed: 0.2
+  player: {fileID: 1773980119}
+--- !u!114 &1955401924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}

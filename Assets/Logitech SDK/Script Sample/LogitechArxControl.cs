@@ -12,6 +12,8 @@ using System.IO;
 
 public class LogitechArxControl : MonoBehaviour {
 
+    private GameObject player;
+    private PlayerController pc;
 	private String descriptionLabel;
 	// Use this for initialization
 	void Start () {
@@ -20,7 +22,8 @@ public class LogitechArxControl : MonoBehaviour {
 		LogitechGSDK.logiArxCB cbInstance = new LogitechGSDK.logiArxCB(this.ArxSDKCallback);
 		cbContext.arxCallBack = cbInstance;
 		cbContext.arxContext = IntPtr.Zero;
-		
+        player = GameObject.Find("player");
+        pc = player.GetComponent<PlayerController>();
 		LogitechGSDK.LogiArxInit("com.logitech.unitysample", "Unity Sample", ref cbContext);
 		descriptionLabel = "Click the left mouse button to update the progress bar, Press G to switch to a different index file, press I to go back to the original one.";
 	}
@@ -39,12 +42,7 @@ public class LogitechArxControl : MonoBehaviour {
             Debug.Log("asdsda");
         }
 		///Switch index file on right-mouse down and up
-		if(Input.GetKey(KeyCode.I)){
-			LogitechGSDK.LogiArxSetIndex("applet.html");
-		}
-		if(Input.GetKey(KeyCode.G)){
-			LogitechGSDK.LogiArxSetIndex("gameover.html");
-		}
+		
 	}
 
 	public static string getHtmlString()
@@ -91,7 +89,7 @@ public class LogitechArxControl : MonoBehaviour {
 		else if (eventType == LogitechGSDK.LOGI_ARX_EVENT_TAP_ON_TAG)
 		{
 			Debug.Log("Tap on tag with id :"+eventArg);
-			GameObject.Find("player").GetComponent<PlayerController>().attackingF();
+            pc.attackingF();
 		}			
 	}
 	
