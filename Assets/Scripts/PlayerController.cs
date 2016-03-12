@@ -20,14 +20,21 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		speed -= 0.01f;
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.J)) {
+            speed += 0.25f;
+        }
+
+        speed -= 0.01f;
 		if (speed < 0) speed = 0;
 		else if (speed > 1) speed = 1;
 		Debug.Log(speed);
 		animator.speed = speed;
 
-		
-		if (attacking) {
+        if (Input.GetKey(KeyCode.Space)) {
+            attackingF();
+        }
+
+        if (attacking) {
 			elapsedAttack += Time.deltaTime;
 			if (elapsedAttack > attackTime) {
 				elapsedAttack = 0;
