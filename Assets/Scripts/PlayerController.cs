@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour {
 	public float attackTime = 1;
 	private bool attacking = false;
 	public GameObject effect;
+	public GameObject dead;
+
+	private bool deadBoy = false;
 
 	private Animator animator;
 
@@ -19,10 +22,20 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (attacking && other.name == "broken" || other.name == "broken(Clone)") {
-			Destroy(other.gameObject,5);
-			other.GetComponent<Explode>().explode();
-			this.GetComponent<BoxCollider2D>().enabled = false;
+		if (other.name == "broken" || other.name == "broken(Clone)") {
+			if (attacking) {
+				Destroy(other.gameObject,5);
+				other.GetComponent<Explode>().explode();
+				this.GetComponent<BoxCollider2D>().enabled = false;
+			}
+			else {
+				deadBoy = true;
+				Vector3 pos = transform.position;
+				pos.y += 0.1f;
+				pos.z += -2;
+				GameObject instance = Instantiate(dead, pos , Quaternion.identity) as GameObject;
+				instance.transform.SetParent(transform);
+			}
 		}
 	}
 
@@ -35,6 +48,11 @@ public class PlayerController : MonoBehaviour {
         speed -= 0.01f;
 		if (speed < 0) speed = 0;
 		else if (speed > 1) speed = 1;
+
+		
+		if (deadBoy) {
+			speed = 0;
+		}
 		animator.speed = speed;
 
         if (Input.GetKey(KeyCode.Space)) {
