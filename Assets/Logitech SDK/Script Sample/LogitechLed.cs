@@ -16,6 +16,9 @@ public class LogitechLed : MonoBehaviour
     int[] FUNC = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
     int score = 0;
     int ToPress1, ToPress2, red, green, blue;
+    float error = 0.0f;
+    float correct = 0.0f;
+    float update = 0.0f;
     public string effectLabel;
     Boolean start = false;
     private int Streak;
@@ -47,119 +50,167 @@ public class LogitechLed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (correct < 0) {
             if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.R))
             {
                 if ((ToPress1 == (int)KeyCode.Q && ToPress2 == (int)KeyCode.R) || (ToPress1 == (int)KeyCode.R && ToPress2 == (int)KeyCode.Q)) Correct(LogitechGSDK.keyboardNames.Q);
-                else Error();
+                else error = update = 0;
             }
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.T))
             {
                 if ((ToPress1 == (int)KeyCode.W && ToPress2 == (int)KeyCode.T) || (ToPress1 == (int)KeyCode.T && ToPress2 == (int)KeyCode.W)) Correct(LogitechGSDK.keyboardNames.W);
-                else Error();
+                else error = update = 0;
             }
             if (Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.Y))
             {
                 if ((ToPress1 == (int)KeyCode.E && ToPress2 == (int)KeyCode.Y) || (ToPress1 == (int)KeyCode.Y && ToPress2 == (int)KeyCode.E)) Correct(LogitechGSDK.keyboardNames.E);
-                else Error();
+                else error = update = 0;
             }
             if (Input.GetKey(KeyCode.R) && Input.GetKey(KeyCode.U))
             {
                 if ((ToPress1 == (int)KeyCode.R && ToPress2 == (int)KeyCode.U) || (ToPress1 == (int)KeyCode.U && ToPress2 == (int)KeyCode.R)) Correct(LogitechGSDK.keyboardNames.R);
-                else Error();
+                else error = update = 0;
             }
             if (Input.GetKey(KeyCode.T) && Input.GetKey(KeyCode.I))
             {
                 if ((ToPress1 == (int)KeyCode.T && ToPress2 == (int)KeyCode.I) || (ToPress1 == (int)KeyCode.I && ToPress2 == (int)KeyCode.T)) Correct(LogitechGSDK.keyboardNames.T);
-                else Error();
+                else error = update = 0;
             }
-             if (Input.GetKey(KeyCode.Y) && Input.GetKey(KeyCode.O))
+            if (Input.GetKey(KeyCode.Y) && Input.GetKey(KeyCode.O))
             {
                 if ((ToPress1 == (int)KeyCode.Y && ToPress2 == (int)KeyCode.O) || (ToPress1 == (int)KeyCode.O && ToPress2 == (int)KeyCode.Y)) Correct(LogitechGSDK.keyboardNames.Y);
-                else Error();
+                else error = update = 0;
             }
-             if (Input.GetKey(KeyCode.U) && Input.GetKey(KeyCode.P))
+            if (Input.GetKey(KeyCode.U) && Input.GetKey(KeyCode.P))
             {
                 if ((ToPress1 == (int)KeyCode.U && ToPress2 == (int)KeyCode.P) || (ToPress1 == (int)KeyCode.P && ToPress2 == (int)KeyCode.U)) Correct(LogitechGSDK.keyboardNames.U);
-                else Error();
+                else error = update = 0;
             }
-             if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.F))
+            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.F))
             {
                 if ((ToPress1 == (int)KeyCode.A && ToPress2 == (int)KeyCode.F) || (ToPress1 == (int)KeyCode.F && ToPress2 == (int)KeyCode.A)) Correct(LogitechGSDK.keyboardNames.A);
-                else Error();
+                else error = update = 0;
             }
-             if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.G))
+            if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.G))
             {
                 if ((ToPress1 == (int)KeyCode.S && ToPress2 == (int)KeyCode.G) || (ToPress1 == (int)KeyCode.G && ToPress2 == (int)KeyCode.S)) Correct(LogitechGSDK.keyboardNames.S);
-                else Error();
+                else error = update = 0;
             }
-             if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.H))
+            if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.H))
             {
                 if ((ToPress1 == (int)KeyCode.D && ToPress2 == (int)KeyCode.H) || (ToPress1 == (int)KeyCode.H && ToPress2 == (int)KeyCode.D)) Correct(LogitechGSDK.keyboardNames.D);
-                else Error();
+                else error = update = 0;
             }
-             if (Input.GetKey(KeyCode.F) && Input.GetKey(KeyCode.J))
+            if (Input.GetKey(KeyCode.F) && Input.GetKey(KeyCode.J))
             {
                 if ((ToPress1 == (int)KeyCode.F && ToPress2 == (int)KeyCode.J) || (ToPress1 == (int)KeyCode.J && ToPress2 == (int)KeyCode.F)) Correct(LogitechGSDK.keyboardNames.F);
-                else Error();
+                else error = update = 0;
             }
-             if (Input.GetKey(KeyCode.G) && Input.GetKey(KeyCode.K))
+            if (Input.GetKey(KeyCode.G) && Input.GetKey(KeyCode.K))
             {
                 if ((ToPress1 == (int)KeyCode.G && ToPress2 == (int)KeyCode.K) || (ToPress1 == (int)KeyCode.K && ToPress2 == (int)KeyCode.G)) Correct(LogitechGSDK.keyboardNames.G);
-                else Error();
+                else error = update = 0;
             }
-             if (Input.GetKey(KeyCode.H) && Input.GetKey(KeyCode.L))
+            if (Input.GetKey(KeyCode.H) && Input.GetKey(KeyCode.L))
             {
                 if ((ToPress1 == (int)KeyCode.H && ToPress2 == (int)KeyCode.L) || (ToPress1 == (int)KeyCode.L && ToPress2 == (int)KeyCode.H)) Correct(LogitechGSDK.keyboardNames.H);
-                else Error();
+                else error = update = 0;
             }
-             if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.V))
+            if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.V))
             {
                 if ((ToPress1 == (int)KeyCode.Z && ToPress2 == (int)KeyCode.V) || (ToPress1 == (int)KeyCode.V && ToPress2 == (int)KeyCode.Z)) Correct(LogitechGSDK.keyboardNames.Z);
-                else Error();
+                else error = update = 0;
             }
-             if (Input.GetKey(KeyCode.X) && Input.GetKey(KeyCode.B))
+            if (Input.GetKey(KeyCode.X) && Input.GetKey(KeyCode.B))
             {
                 if ((ToPress1 == (int)KeyCode.X && ToPress2 == (int)KeyCode.B) || (ToPress1 == (int)KeyCode.B && ToPress2 == (int)KeyCode.X)) Correct(LogitechGSDK.keyboardNames.X);
-            else Error();
+                else error = update = 0;
             }
-             if (Input.GetKey(KeyCode.C) && Input.GetKey(KeyCode.N))
+            if (Input.GetKey(KeyCode.C) && Input.GetKey(KeyCode.N))
             {
                 if ((ToPress1 == (int)KeyCode.C && ToPress2 == (int)KeyCode.N) || (ToPress1 == (int)KeyCode.N && ToPress2 == (int)KeyCode.C)) Correct(LogitechGSDK.keyboardNames.C);
-                else Error();
+                else error = update = 0;
             }
-             if (Input.GetKey(KeyCode.V) && Input.GetKey(KeyCode.M))
+            if (Input.GetKey(KeyCode.V) && Input.GetKey(KeyCode.M))
             {
                 if ((ToPress1 == (int)KeyCode.V && ToPress2 == (int)KeyCode.M) || (ToPress1 == (int)KeyCode.M && ToPress2 == (int)KeyCode.V)) Correct(LogitechGSDK.keyboardNames.V);
-                else Error();
+                else error = update = 0;
             }
+        }
+        else {
+            correct += Time.deltaTime;
+            if (correct > 0.5) {
+
+                Stop();
+                for (int i = 0; i < 8; ++i)
+                {
+                    if (FUNC[i] >= 0 && FUNC[i] < 30) LogitechGSDK.LogiLedSetLightingForKeyWithKeyName((LogitechGSDK.keyboardNames)START_F + i, 0, 0, 0);
+                    else if (FUNC[i] >= 30 && FUNC[i] < 60) LogitechGSDK.LogiLedSetLightingForKeyWithKeyName((LogitechGSDK.keyboardNames)START_F + i, 80, 80, 100);
+                    else if (FUNC[i] >= 60 && FUNC[i] < 90) LogitechGSDK.LogiLedSetLightingForKeyWithKeyName((LogitechGSDK.keyboardNames)START_F + i, 40, 40, 100);
+                    else if (FUNC[i] >= 90 && FUNC[i] < 100) LogitechGSDK.LogiLedSetLightingForKeyWithKeyName((LogitechGSDK.keyboardNames)START_F + i, 0, 0, 100);
+                    else if (FUNC[i] == 100)
+                    {
+                        LogitechGSDK.LogiLedSetLightingForKeyWithKeyName((LogitechGSDK.keyboardNames)START_F + i, 0, 0, 60);
+                        if (i >= Streak)
+                        {
+                            score = 0;
+                            Streak++;
+                            if (Streak >= MAX_STREAK) Streak = 7;
+                            System.Random rnd = new System.Random();
+                            K_P = new System.Random().Next(1, 26);
+                        }
+                    }
+                }
+                NewKey(K_P);
+                correct = -1;
+            }
+
+        }
+        if (error < 1.1)
+        {
+            error += Time.deltaTime;
+            Error();
+        }
+        else {
+            if (error != 2)
+            {
+                error = 2;
+                score = 0;
+                Streak = 0;
+                for (int i = 0; i < 8; ++i) FUNC[i] = 0;
+                System.Random rnd = new System.Random();
+                int key = new System.Random().Next(1, 26);
+
+                NewKey(key);
+            }
+        }
     }
 
 
 
     private void Error()
     {
-        LogitechGSDK.LogiLedSetLighting(100, 0, 0);
-        System.Threading.Thread.Sleep(200);
-        LogitechGSDK.LogiLedSetLighting(0, 0, 0);
-        System.Threading.Thread.Sleep(200);
-        LogitechGSDK.LogiLedSetLighting(100, 0, 0);
-        System.Threading.Thread.Sleep(200);
-        LogitechGSDK.LogiLedSetLighting(0, 0, 0);
-        System.Threading.Thread.Sleep(500);
-        score = 0;
-        Streak = 0;
-        for (int i = 0; i < 8; ++i) FUNC[i] = 0;
-        System.Random rnd = new System.Random();
-        int key = new System.Random().Next(1, 26);
 
-        NewKey(key);
+        if (update < 0.2 && error < 0.2) { LogitechGSDK.LogiLedSetLighting(100, 0, 0); update = 0.3f; }
+        //System.Threading.Thread.Sleep(200);
+
+        else if (error > 0.2 && update < 0.4 && error < 0.4) { LogitechGSDK.LogiLedSetLighting(0, 0, 0); update = 0.5f; }
+        //System.Threading.Thread.Sleep(200);
+
+        else if (error > 0.4 && update < 0.6 && error < 0.6) { LogitechGSDK.LogiLedSetLighting(100, 0, 0); update = 0.7f; }
+        //System.Threading.Thread.Sleep(200);
+
+        else if (error > 0.6 && update < 0.8 && error < 0.8) { LogitechGSDK.LogiLedSetLighting(0, 0, 0); update = 0.9f; }
+        //System.Threading.Thread.Sleep(500);
+
     }
 
     void Correct(LogitechGSDK.keyboardNames key)
     {
         pc.speed += 0.25f;
-        switch(key)
-        {
+        switch (key) {
+
             case LogitechGSDK.keyboardNames.Q:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
@@ -169,7 +220,7 @@ public class LogitechLed : MonoBehaviour
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.TWO, 100, 100, 100);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.W, 100, 100, 100);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.A, 100, 100, 100);
-                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.TAB, 100, 100, 100); 
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.TAB, 100, 100, 100);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.CAPS_LOCK, 100, 100, 100);
 
 
@@ -211,7 +262,7 @@ public class LogitechLed : MonoBehaviour
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.R, 100, 100, 100);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.FOUR, 100, 100, 100);
 
-                
+
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.SIX, 100, 100, 100);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.T, 100, 100, 100);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.G, 100, 100, 100);
@@ -464,28 +515,9 @@ public class LogitechLed : MonoBehaviour
         }
         score += 10;
         FUNC[Streak] = score;
-        System.Threading.Thread.Sleep(300);
-        Stop();
-        for (int i = 0; i < 8; ++i)
-        {
-            if (FUNC[i] >= 0 && FUNC[i] < 30) LogitechGSDK.LogiLedSetLightingForKeyWithKeyName((LogitechGSDK.keyboardNames)START_F + i, 0, 0, 0);
-            else if (FUNC[i] >= 30 && FUNC[i] < 60)LogitechGSDK.LogiLedSetLightingForKeyWithKeyName((LogitechGSDK.keyboardNames)START_F + i, 80, 80, 100);
-            else if (FUNC[i] >= 60 && FUNC[i] < 90)LogitechGSDK.LogiLedSetLightingForKeyWithKeyName((LogitechGSDK.keyboardNames)START_F + i, 40, 40, 100);
-            else if (FUNC[i] >= 90 && FUNC[i] < 100)LogitechGSDK.LogiLedSetLightingForKeyWithKeyName((LogitechGSDK.keyboardNames)START_F + i, 0, 0, 100);
-            else if (FUNC[i] == 100) 
-            {
-                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName((LogitechGSDK.keyboardNames)START_F + i, 0, 0, 60);
-                if (i >= Streak)
-                {                      
-                    score = 0;
-                    Streak++;
-                    if (Streak >= MAX_STREAK) Streak = 7;
-                    System.Random rnd = new System.Random();
-                    K_P = new System.Random().Next(1, 26);
-                }
-            }
-        }
-        NewKey(K_P);
+        //System.Threading.Thread.Sleep(300);
+        correct = 0.0f;
+        
     }
 
     private void Stop()
@@ -499,7 +531,7 @@ public class LogitechLed : MonoBehaviour
         {
             case 1:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Q, 100, 0, 0);
-                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Q+0x03, 100, 0, 0);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Q + 0x03, 100, 0, 0);
                 ToPress1 = (int)KeyCode.Q;
                 ToPress2 = (int)KeyCode.R;
                 break;
