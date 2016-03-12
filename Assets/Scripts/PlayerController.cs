@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-	float speed = 0;
+	public float speed = 0;
 	bool left = true;
 
 	private Animator animator;
@@ -29,5 +29,8 @@ public class PlayerController : MonoBehaviour {
 		Debug.Log(speed);
 		animator.speed = speed;
 
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			animator.SetBool("hitting",true);
+		}
 	}
 }
