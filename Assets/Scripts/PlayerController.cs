@@ -17,7 +17,15 @@ public class PlayerController : MonoBehaviour {
 		animator = this.GetComponent<Animator>();
 		effect.GetComponent<SpriteRenderer>().enabled = false;
 	}
-	
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (attacking && other.name == "broken" || other.name == "broken(Clone)") {
+			Destroy(other.gameObject,5);
+			other.GetComponent<Explode>().explode();
+			this.GetComponent<BoxCollider2D>().enabled = false;
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if (left && Input.GetKeyDown(KeyCode.A)) {
@@ -31,7 +39,6 @@ public class PlayerController : MonoBehaviour {
 		else speed -= 0.01f;
 		if (speed < 0) speed = 0;
 		else if (speed > 1) speed = 1;
-		Debug.Log(speed);
 		animator.speed = speed;
 
 		if (Input.GetKeyDown(KeyCode.Space)) {
@@ -45,6 +52,7 @@ public class PlayerController : MonoBehaviour {
 				attacking = false;
 				animator.SetBool("hitting",false);
 				effect.GetComponent<SpriteRenderer>().enabled = false;
+				this.GetComponent<BoxCollider2D>().enabled = true;
 			}
 		}
 	}
