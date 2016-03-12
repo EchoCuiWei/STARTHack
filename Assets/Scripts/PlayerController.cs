@@ -28,23 +28,12 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (left && Input.GetKeyDown(KeyCode.A)) {
-			speed += 0.25f;
-			left = !left;
-		}
-		else if (!left && Input.GetKeyDown(KeyCode.J)) {
-			speed += 0.25f;
-			left = !left;
-		}
-		else speed -= 0.01f;
+		speed -= 0.01f;
 		if (speed < 0) speed = 0;
 		else if (speed > 1) speed = 1;
 		animator.speed = speed;
 
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			attackingF();
-		}
-
+		
 		if (attacking) {
 			elapsedAttack += Time.deltaTime;
 			if (elapsedAttack > attackTime) {
