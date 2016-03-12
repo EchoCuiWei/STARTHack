@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.name == "broken" || other.name == "broken(Clone)") {
+        Debug.Log("dos"+other.name);
+        if ( other.name == "broken" || other.name == "broken(Clone)" ) {
 			if (attacking) {
 				Destroy(other.gameObject,5);
 				other.GetComponent<Explode>().explode();
