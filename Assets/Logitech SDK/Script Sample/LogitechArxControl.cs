@@ -35,7 +35,9 @@ public class LogitechArxControl : MonoBehaviour {
 			System.Random random = new System.Random();
 			int val = random.Next(0, 100);
 			LogitechGSDK.LogiArxSetTagPropertyById("progressbarProgress","style.width",""+val+"%");
-		}
+
+            Debug.Log("asdsda");
+        }
 		///Switch index file on right-mouse down and up
 		if(Input.GetKey(KeyCode.I)){
 			LogitechGSDK.LogiArxSetIndex("applet.html");
