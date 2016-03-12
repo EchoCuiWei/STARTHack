@@ -156,7 +156,10 @@ MonoBehaviour:
   initSpeed: .100000001
   size: 5
   baseSpeed: 0
+  pc: {fileID: 0}
   player: {fileID: 1773980119}
+  pos: 0
+  speed: 0
 --- !u!1 &305742209
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +229,10 @@ MonoBehaviour:
   initSpeed: .449999988
   size: 5
   baseSpeed: .200000003
+  pc: {fileID: 0}
   player: {fileID: 1773980119}
+  pos: 0
+  speed: 0
 --- !u!1 &440290335
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +316,10 @@ MonoBehaviour:
   initSpeed: 1
   size: 5
   baseSpeed: 0
+  pc: {fileID: 0}
   player: {fileID: 1773980119}
+  pos: 0
+  speed: 0
 --- !u!1 &691383269
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +389,10 @@ MonoBehaviour:
   initSpeed: .100000001
   size: 5
   baseSpeed: 0
+  pc: {fileID: 0}
   player: {fileID: 1773980119}
+  pos: 0
+  speed: 0
 --- !u!1 &922028224
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +547,10 @@ MonoBehaviour:
   initSpeed: .5
   size: 5
   baseSpeed: 0
+  pc: {fileID: 0}
   player: {fileID: 1773980119}
+  pos: 0
+  speed: 0
 --- !u!1001 &1638365822
 Prefab:
   m_ObjectHideFlags: 0
@@ -667,6 +682,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  attackTime: 2
+  effect: {fileID: 1986998109}
 --- !u!1 &1893988151
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +753,10 @@ MonoBehaviour:
   initSpeed: .5
   size: 5
   baseSpeed: 0
+  pc: {fileID: 0}
   player: {fileID: 1773980119}
+  pos: 0
+  speed: 0
 --- !u!1 &1910030859
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,7 +840,10 @@ MonoBehaviour:
   initSpeed: 1
   size: 5
   baseSpeed: 0
+  pc: {fileID: 0}
   player: {fileID: 1773980119}
+  pos: 0
+  speed: 0
 --- !u!1 &1931168626
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,7 +967,10 @@ MonoBehaviour:
   initSpeed: .449999988
   size: 5
   baseSpeed: .200000003
+  pc: {fileID: 0}
   player: {fileID: 1773980119}
+  pos: 0
+  speed: 0
 --- !u!1 &1986998109
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,8 +980,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1986998111}
   - 212: {fileID: 1986998110}
+  - 95: {fileID: 1986998112}
   m_Layer: 0
-  m_Name: effect_0
+  m_Name: effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -999,3 +1026,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+--- !u!95 &1986998112
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1986998109}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 19f4d17947a16a140bb4c3ff739791e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
