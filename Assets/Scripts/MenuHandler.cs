@@ -38,4 +38,8 @@ public class MenuHandler : MonoBehaviour {
 			keyboardButton.GetComponentInChildren<UnityEngine.UI.Text>().text = "KEYBOARD: STANDARD";
         }
     }
+
+	public void handleCreditsBackButton() {
+		Application.LoadLevel("MainMenu");
+	}
 }
