@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour {
 		animator.speed = speed;
 
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			attacking();
+			attackingF();
 		}
 
 		if (attacking) {
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	public void attacking() {
+	public void attackingF() {
 		animator.SetBool("hitting",true);
 		effect.GetComponent<SpriteRenderer>().enabled = true;
 		attacking = true;
