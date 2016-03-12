@@ -11,12 +11,12 @@ using System;
 public class LogitechLed : MonoBehaviour
 {
 
-    /*int G810_KEY_GRID[7][23] = {
+    int[,] KEYBOARD = new int[4,12]{
         {0x29,      0x02,  0x03,   0x04,   0x05,   0x06,   0x07,   0x08,   0x09,   0x0A,   0x0B,    0x0C},
         {0x0F,      0x10,  0x11,   0x12,   0x13,   0x14,   0x15,   0x16,   0x17,   0x18,   0x19,    0x1A},
         {0x3A,      0x1E,  0x1F,   0x20,   0x21,   0x22,   0x23,   0x24,   0x25,   0x26,   0x27,    0},
         {0X2B,      0x2C,  0x2D,   0x2E,   0x2F,   0x30,   0x31,   0x32,   0x33,   0x34,   0,       0}
-    };*/
+    };
     
 
     int score = 0;
@@ -159,75 +159,309 @@ public class LogitechLed : MonoBehaviour
             case LogitechGSDK.keyboardNames.Q:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.ONE, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.TWO, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.W, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.A, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.TAB, 100, 100, 100); 
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.CAPS_LOCK, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.FOUR, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.FIVE, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.E, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.D, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.F, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.T, 100, 100, 100);
+
                 break;
             case LogitechGSDK.keyboardNames.W:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.TWO, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Q, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.A, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.S, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.E, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.THREE, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.FIVE, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.R, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.F, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.G, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Y, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.SIX, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.E:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.THREE, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.W, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.S, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.D, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.R, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.FOUR, 100, 100, 100);
+
+                
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.SIX, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.T, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.G, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.H, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.U, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.SEVEN, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.R:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.FOUR, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.FIVE, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.E, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.D, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.F, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.T, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.SEVEN, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Y, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.H, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.J, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.I, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.EIGHT, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.T:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.FIVE, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.R, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.F, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.G, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Y, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.SIX, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.EIGHT, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.U, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.J, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.K, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.O, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.NINE, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.Y:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.SIX, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.T, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.G, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.H, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.U, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.SEVEN, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.NINE, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.I, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.K, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.L, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.P, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.ZERO, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.U:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.SEVEN, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Y, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.H, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.J, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.I, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.EIGHT, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.ZERO, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.O, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.L, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.SEMICOLON, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.MINUS, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.OPEN_BRACKET, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.A:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Q, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.W, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.S, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Z, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.LEFT_SHIFT, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.CAPS_LOCK, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.R, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.D, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.C, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.V, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.G, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.T, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.S:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.W, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.A, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Z, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.X, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.D, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.E, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.T, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.F, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.V, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.B, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.H, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Y, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.D:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.E, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.S, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.X, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.C, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.F, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.R, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Y, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.G, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.B, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.N, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.J, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.U, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.F:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.R, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.D, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.C, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.V, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.G, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.T, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.U, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.H, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.N, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.M, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.K, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.I, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.G:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.T, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.F, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.V, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.B, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.H, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Y, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.I, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.J, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.M, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.COMMA, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.L, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.O, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.H:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Y, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.G, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.B, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.N, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.J, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.U, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.O, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.K, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.COMMA, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.PERIOD, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.SEMICOLON, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.P, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.Z:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.A, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.S, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.X, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.LEFT_ALT, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.LEFT_WINDOWS, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.BACKSLASH, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.F, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.C, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.B, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.G, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.X:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.S, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.Z, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.LEFT_ALT, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.C, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.D, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.G, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.V, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.N, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.H, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.C:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.D, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.X, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.V, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.F, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.H, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.B, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.M, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.J, 100, 100, 100);
                 break;
             case LogitechGSDK.keyboardNames.V:
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key, 0, 100, 0);
                 LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(key + 0x03, 0, 100, 0);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.F, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.C, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.B, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.G, 100, 100, 100);
+
+
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.J, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.N, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.COMMA, 100, 100, 100);
+                LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.K, 100, 100, 100);
                 break;
         }
-        
         System.Threading.Thread.Sleep(300);
-
+       // Streak++;
+       // LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(START_F)
+        LogitechGSDK.LogiLedSetLightingForKeyWithKeyName(LogitechGSDK.keyboardNames.J, 100, 100, 100);
         Stop();
         System.Random rnd = new System.Random();
         int key2 = new System.Random().Next(1, 26);
