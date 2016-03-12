@@ -743,6 +743,7 @@ MonoBehaviour:
   speed: 0
   attackTime: 2
   effect: {fileID: 1986998109}
+  dead: {fileID: 107158, guid: fcd6b74d7958e3046a91c78c1f9b8eaf, type: 2}
 --- !u!61 &1773980124
 BoxCollider2D:
   m_ObjectHideFlags: 0
