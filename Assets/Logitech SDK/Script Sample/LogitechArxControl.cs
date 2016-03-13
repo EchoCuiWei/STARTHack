@@ -10,6 +10,8 @@ public class LogitechArxControl : MonoBehaviour
     private String descriptionLabel;
     IntPtr ctx_flags;
     // Use this for initialization
+    GameObject player;
+    PlayerController pc;
     void Start()
     {
 
@@ -18,7 +20,8 @@ public class LogitechArxControl : MonoBehaviour
         ctx_flags = Marshal.AllocHGlobal(sizeof(int));
         cbContext.arxCallBack = cbInstance;
         cbContext.arxContext = ctx_flags;
-
+        player = GameObject.Find("player");
+        pc = player.GetComponent<PlayerController>();
         LogitechGSDK.LogiArxInit("com.logitech.unitysample", "Unity Sample", ref cbContext);
 //dos xaiets anaven a passeig i van trobar una flor molt bonñica molt bonica. Era una Rosella, i el seu vermell els va deixar bocabadats. Oh, que bonic!!!!!
     }
@@ -30,22 +33,7 @@ public class LogitechArxControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            //On left-mouse click set random value on applet's progress bar
-            System.Random random = new System.Random();
-            int val = random.Next(0, 100);
-            LogitechGSDK.LogiArxSetTagPropertyById("progressbarProgress", "style.width", "" + val + "%");
-        }
-        ///Switch index file on right-mouse down and up
-        if (Input.GetKey(KeyCode.I))
-        {
-            LogitechGSDK.LogiArxSetIndex("applet.html");
-        }
-        if (Input.GetKey(KeyCode.G))
-        {
-            LogitechGSDK.LogiArxSetIndex("gameover.html");
-        }
+       
 
         if (Marshal.ReadInt32(ctx_flags) == 1)
         {
@@ -101,6 +89,7 @@ public class LogitechArxControl : MonoBehaviour
         else if (eventType == LogitechGSDK.LOGI_ARX_EVENT_TAP_ON_TAG)
         {
             Debug.Log("Tap on tag with id :" + eventArg);
+            pc.attackingF();
         }
     }
 

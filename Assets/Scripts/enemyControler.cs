@@ -6,7 +6,7 @@ public class enemyControler : MonoBehaviour {
 	public float speed = 0;
 	public GameObject effect;
 	public GameObject dead;
-	private bool deadBoy = false;
+	public bool deadBoy = false;
 
 	private Animator animator;
 

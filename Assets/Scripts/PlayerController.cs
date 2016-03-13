@@ -10,16 +10,20 @@ public class PlayerController : MonoBehaviour {
 	private bool attacking = false;
 	public GameObject effect;
 	public GameObject dead;
-
-	private bool deadBoy = false;
-
+    
+	public bool deadBoy = false;
+    private bool change;
 	private Animator animator;
 
-	// Use this for initialization
-	void Start () {
+    
+
+
+    // Use this for initialization
+    void Start () {
 		animator = this.GetComponent<Animator>();
 		effect.GetComponent<SpriteRenderer>().enabled = false;
-	}
+        
+    }
 
 	void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("dos"+other.name);
@@ -59,13 +63,24 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKey(KeyCode.Space)) {
             attackingF();
         }
+        Debug.Log(change);
+        if (change)
+        {
 
+            animator.SetBool("hitting", true);
+            effect.GetComponent<SpriteRenderer>().enabled = true;
+
+            attacking = true;
+            change = false;
+        }
         if (attacking) {
 			elapsedAttack += Time.deltaTime;
 			if (elapsedAttack > attackTime) {
 				elapsedAttack = 0;
 				attacking = false;
-				animator.SetBool("hitting",false);
+
+                
+                animator.SetBool("hitting",false);
 				effect.GetComponent<SpriteRenderer>().enabled = false;
 				this.GetComponent<BoxCollider2D>().enabled = true;
 			}
@@ -73,8 +88,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void attackingF() {
-		animator.SetBool("hitting",true);
-		effect.GetComponent<SpriteRenderer>().enabled = true;
-		attacking = true;
+        change = true;
 	}
 }
