@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.J)) {
-            speed += 0.25f;
+            speed += 0.35f;
         }
 
         speed -= 0.01f;
