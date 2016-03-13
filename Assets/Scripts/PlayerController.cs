@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour {
 	public float attackTime = 1;
 	private bool attacking = false;
 	public GameObject effect;
+	public GameObject dead;
+
+	private bool deadBoy = false;
 
 	private Animator animator;
 
@@ -17,7 +20,26 @@ public class PlayerController : MonoBehaviour {
 		animator = this.GetComponent<Animator>();
 		effect.GetComponent<SpriteRenderer>().enabled = false;
 	}
-	
+
+	void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("dos"+other.name);
+        if ( other.name == "broken" || other.name == "broken(Clone)" ) {
+			if (attacking) {
+				Destroy(other.gameObject,5);
+				other.GetComponent<Explode>().explode();
+				this.GetComponent<BoxCollider2D>().enabled = false;
+			}
+			else {
+				deadBoy = true;
+				Vector3 pos = transform.position;
+				pos.y += 0.1f;
+				pos.z += -2;
+				GameObject instance = Instantiate(dead, pos , Quaternion.identity) as GameObject;
+				instance.transform.SetParent(transform);
+			}
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.J)) {
@@ -27,7 +49,11 @@ public class PlayerController : MonoBehaviour {
         speed -= 0.01f;
 		if (speed < 0) speed = 0;
 		else if (speed > 1) speed = 1;
-		Debug.Log(speed);
+
+		
+		if (deadBoy) {
+			speed = 0;
+		}
 		animator.speed = speed;
 
         if (Input.GetKey(KeyCode.Space)) {
@@ -41,6 +67,7 @@ public class PlayerController : MonoBehaviour {
 				attacking = false;
 				animator.SetBool("hitting",false);
 				effect.GetComponent<SpriteRenderer>().enabled = false;
+				this.GetComponent<BoxCollider2D>().enabled = true;
 			}
 		}
 	}
