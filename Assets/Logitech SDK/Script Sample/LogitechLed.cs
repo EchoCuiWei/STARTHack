@@ -208,7 +208,7 @@ public class LogitechLed : MonoBehaviour
 
     void Correct(LogitechGSDK.keyboardNames key)
     {
-        pc.speed += 0.25f;
+        pc.speed += 0.50f;
         switch (key) {
 
             case LogitechGSDK.keyboardNames.Q:

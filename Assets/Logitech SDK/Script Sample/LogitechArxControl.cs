@@ -10,8 +10,6 @@ public class LogitechArxControl : MonoBehaviour
     private String descriptionLabel;
     IntPtr ctx_flags;
     // Use this for initialization
-    GameObject player;
-    PlayerController pc;
     void Start()
     {
 
@@ -20,10 +18,9 @@ public class LogitechArxControl : MonoBehaviour
         ctx_flags = Marshal.AllocHGlobal(sizeof(int));
         cbContext.arxCallBack = cbInstance;
         cbContext.arxContext = ctx_flags;
-        player = GameObject.Find("player");
-        pc = player.GetComponent<PlayerController>();
+
         LogitechGSDK.LogiArxInit("com.logitech.unitysample", "Unity Sample", ref cbContext);
-        descriptionLabel = "Click the left mouse button to update the progress bar, Press G to switch to a different index file, press I to go back to the original one.";
+//dos xaiets anaven a passeig i van trobar una flor molt bonñica molt bonica. Era una Rosella, i el seu vermell els va deixar bocabadats. Oh, que bonic!!!!!
     }
 
     void OnGUI()
@@ -104,7 +101,6 @@ public class LogitechArxControl : MonoBehaviour
         else if (eventType == LogitechGSDK.LOGI_ARX_EVENT_TAP_ON_TAG)
         {
             Debug.Log("Tap on tag with id :" + eventArg);
-            pc.attackingF();
         }
     }
 
