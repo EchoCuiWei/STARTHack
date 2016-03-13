@@ -16,6 +16,7 @@ public class InfiniteMovement : MonoBehaviour {
 	void Awake () {
 		speed = initSpeed;
 		DontDestroyOnLoad(transform.gameObject);
+        player = GameObject.Find("player");
 		pc = player.GetComponent<PlayerController>();
 	}
 
