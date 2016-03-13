@@ -15,9 +15,6 @@ public class PlayerController : MonoBehaviour {
     private bool change;
 	private Animator animator;
 
-    
-
-
     // Use this for initialization
     void Start () {
 		animator = this.GetComponent<Animator>();
