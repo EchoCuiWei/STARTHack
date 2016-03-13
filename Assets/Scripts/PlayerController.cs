@@ -54,13 +54,13 @@ public class PlayerController : MonoBehaviour {
 		
 		if (deadBoy) {
 			speed = 0;
+            if (Input.GetKey(KeyCode.Space)) Application.LoadLevel (Application.loadedLevel);
 		}
 		animator.speed = speed;
 
         if (Input.GetKey(KeyCode.Space)) {
             attackingF();
         }
-        Debug.Log(change);
         if (change)
         {
 
